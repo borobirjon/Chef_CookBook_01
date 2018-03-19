@@ -1,7 +1,9 @@
 package 'tree' do
 	action :install
 end
-
+package 'nano' do
+	acton :install
+end
 package 'ntp' do
 	action :install
 end
