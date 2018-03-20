@@ -2,8 +2,13 @@ package 'tree' do
 	action :install
 end
 package 'nano' do
-	acton :install
+	action :install
 end
+
+package 'vim' do
+	action :install
+end
+
 package 'ntp' do
 	action :install
 end
