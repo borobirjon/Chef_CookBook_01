@@ -18,7 +18,12 @@ package 'git' do
 end
 
 file '/etc/motd' do
-	content 'This sever is property of Biron Boro'
+	content "This sever is property of Biron Boro
+	HOSTNAME: #{node['hostname']}
+	IP ADDRESS: #{node['ipaddress']}
+	CPU: #{node['cpu']['0']['mhz']}
+	MEMORY: #{node['memory']['total']}
+	"
 	action :create
 	owner 'root'
 	group 'root'
