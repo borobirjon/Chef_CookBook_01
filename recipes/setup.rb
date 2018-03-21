@@ -30,6 +30,9 @@ end
 
 template '/etc/motd' do
 	source 'template.erb'
+	variables(
+	:name => 'birjon'
+	)
 	action :create
 	owner 'root'
 	group 'root'
