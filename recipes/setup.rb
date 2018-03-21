@@ -17,14 +17,21 @@ package 'git' do
 	action :install
 end
 
-file '/etc/motd' do
-	content "This sever is property of Biron Boro
-	HOSTNAME: #{node['hostname']}
-	IP ADDRESS: #{node['ipaddress']}
-	CPU: #{node['cpu']['0']['mhz']}
-	MEMORY: #{node['memory']['total']}
-	"
+#file '/etc/motd' do
+#content "This sever is property of Biron Boro
+#HOSTNAME: #{node['hostname']}
+#IP ADDRESS: #{node['ipaddress']}
+#CPU: #{node['cpu']['0']['mhz']}
+#MEMORY: #{node['memory']['total']}
+#"
+#action :create
+#owner 'root'
+#group 'root'
+
+template '/etc/motd' do
+	source 'template.erb'
 	action :create
 	owner 'root'
 	group 'root'
+
 end
